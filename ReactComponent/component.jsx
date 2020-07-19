@@ -1,7 +1,16 @@
 var Employee = React.createClass({
+	getDefaultProps: function(){
+		return{
+			name :'Person Biodata'
+		};
+	},
 	render:function(){
+		var name = this.props.name;
 		return(
-			<div> Employee Portal</div>
+			<div>
+				<div> Employee {name}</div>
+				<p>Find {name} data</p>
+			</div>
 
 		);
 	}
@@ -10,5 +19,5 @@ var Employee = React.createClass({
 });
 
 ReactDOM.render(
-	<Employee/>, document.getElementById('app')
+	<Employee name="Melvins"/>, document.getElementById('app')
 );
